@@ -21,7 +21,7 @@ module TinyMCE
     dest = File.join(Rails.root.to_s, 'public', 'javascripts', 'tiny_mce')
     tiny_mce_js = File.join(dest, 'tiny_mce.js')
 
-    unless File.exists?(tiny_mce_js) && FileUtils.identical?(File.join(orig, 'tiny_mce.js'), tiny_mce_js)
+    unless File.exists?(tiny_mce_js)
       if File.exists?(tiny_mce_js)
         # upgrade
         begin
