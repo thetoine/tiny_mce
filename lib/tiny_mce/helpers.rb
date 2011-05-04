@@ -21,9 +21,11 @@ module TinyMCE
         
         if uses_jquery?
           #TODO: Use dynamic editor_selector from configuration
+          tinymce_js += "$(document).ready(function(){"
           tinymce_js += "$(function(){ $('textarea.mceEditor').tinymce("
           tinymce_js += configuration.to_json
           tinymce_js += ");"
+          tinymce_js += "});"
           tinymce_js += "});"
         else
           tinymce_js += "tinyMCE.init("
