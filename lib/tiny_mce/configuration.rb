@@ -111,7 +111,7 @@ module TinyMCE
     end
     
     def uses_jquery?
-      Rails.version.to_i >= 3 && ActionView::Helpers::AssetTagHelper.javascript_expansions[:defaults].detect{|x| x == "jquery"}
+      Rails.version.to_i >= 3
     end
 
   end
