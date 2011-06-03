@@ -1,5 +1,10 @@
 = Plugin Changelog
 
+== Version 0.1.9.2
+* Upgraded TinyMCE to 3.4.2 (Francesc Pla)
+* Added spanish to available languages (Francesc Pla)
+* Support for Rails 3.1, js placed on "app/assets/javascripts/tiny_mce", remember to exclude them from aplication.js loading (Francesc Pla)
+
 == Version 0.1.7
 * Upgraded TinyMCE from 3.3.9.3 to 3.4 (Sasha Gerrand)
 * Added additional languages and associated themes and plugins
