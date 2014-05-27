@@ -17,7 +17,11 @@ module TinyMCE
         # Include an option to load the main tiny_mce.js file if the app appears
         # to be using jquery. (And use uncompressed script in development)
         if configuration.uses_jquery?
-          configuration.reverse_add_options( {:script_url => (Rails.env.to_s == 'development' ? "/javascripts/tiny_mce/tiny_mce_src.js" : "/javascripts/tiny_mce/tiny_mce.js")} )
+          if Rails.version > "3.0"
+            configuration.reverse_add_options( {:script_url => (Rails.env.to_s == 'development' ? "/assets/tiny_mce/tiny_mce_src.js" : "/assets/tiny_mce/tiny_mce.js")} )
+          else
+            configuration.reverse_add_options( {:script_url => (Rails.env.to_s == 'development' ? "/javascripts/tiny_mce/tiny_mce_src.js" : "/javascripts/tiny_mce/tiny_mce.js")} )
+          end
         end
         
         

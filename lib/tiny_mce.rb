@@ -18,7 +18,11 @@ module TinyMCE
   def self.install_or_update_tinymce
     require 'fileutils'
     orig = File.join(File.dirname(__FILE__), 'tiny_mce', 'assets', 'tiny_mce')
-    dest = File.join(Rails.root.to_s, 'public', 'javascripts', 'tiny_mce')
+    if Rails.version > "3.0"
+      dest = File.join(Rails.root.to_s, 'app', 'assets', 'javascripts', 'tiny_mce')
+    else
+      dest = File.join(Rails.root.to_s, 'public', 'javascripts', 'tiny_mce')
+    end
     tiny_mce_js = File.join(dest, 'tiny_mce.js')
 
     unless File.exists?(tiny_mce_js)
